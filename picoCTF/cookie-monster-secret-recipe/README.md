@@ -16,7 +16,7 @@ You can access the Cookie Monster here and good luck.
 
 1. First of all, I connected to the website to see how it looks.
 
-![site](./img/cmsr1.png)
+![site](./img/csmr1.png)
 
 2. I noticed there is a login form, but based on the task's name and description, the word "cookie" led me to think something might be hiding in the website's cookies.
 
