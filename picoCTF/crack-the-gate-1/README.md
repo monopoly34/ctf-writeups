@@ -28,7 +28,7 @@ Challenge description:
         4. Click the login button to get a `POST` request
         5. Right click on the request and copy it as a cURL
 
-4. After getting the cURL, I pasted it in the terminal and added -H 'X-Dev-Access: yes' \
+4. After getting the cURL, I pasted it in the terminal and added `-H 'X-Dev-Access: yes' \`. The response printed out, and there it was JSON blob with the flag: picoCTF{brut4_f0rc4_b3a957eb}
 
 ```bash
 curl 'http://amiable-citadel.picoctf.net:58946/login' \
@@ -42,5 +42,6 @@ curl 'http://amiable-citadel.picoctf.net:58946/login' \
   -H 'Origin: http://amiable-citadel.picoctf.net:58946' \
   -H 'Connection: keep-alive' \
   -H 'Priority: u=0' \
-  --data-raw '{"email":"ctf-player@picoctf.org","password":"dadad"}'
-  -H 'X-Dev-Access: yes' \
+  --data-raw '{"email":"ctf-player@picoctf.org","password":"dadad"}' -H 'X-Dev-Access: yes' \
+```
+[!flag](./img/ctg5.png)
