@@ -29,6 +29,7 @@ Challenge description:
         4. Right-click on the request and select "Copy as cURL".
 
 4. After getting the cURL command, I pasted it into the terminal and manually added the required header: `-H 'X-Dev-Access: yes'`. The response printed out a JSON blob containing the flag: picoCTF{brut4_f0rc4_b3a957eb}
+![img](./img/ctg5.png)
 
 ```bash
 curl 'http://amiable-citadel.picoctf.net:58946/login' \
@@ -44,4 +45,4 @@ curl 'http://amiable-citadel.picoctf.net:58946/login' \
   -H 'Priority: u=0' \
   --data-raw '{"email":"ctf-player@picoctf.org","password":"dadad"}' -H 'X-Dev-Access: yes' \
 ```
-![flag](./img/ctg5.png)
+![flag](./img/ctg6.png)
