@@ -14,22 +14,25 @@ Challenge description:
 ## My approach to finding the flag
 
 1. Firstly, I connected to the website to see what I am dealing with.
+
 ![img1](./img/ctg1.png)
 
 2. I typed random characters in the password field and hit login. The page replied with "Invalid credentials". So, I thought maybe there was something to find in the page's HTML source code. After scrolling for a little bit and inspecting the HTML, I noticed a weird comment with scrambled letters. It looked like some kind of simple obfuscation, so I tried `ROT13`. I decoded the scrambled text and found this note: `NOTE: Jack - temporary bypass: use header "X-Dev-Access: yes`.
+
 ![error](./img/ctg2.png)
 ![source-code](./img/ctg3.png)
 ![decoded](./img/ctg4.png)
 
-3. Next thing I thought to try was to reproduce the bypass. Since browsers can sometimes make it difficult to modify headers directly, I decided to use `curl` in the Linux terminal.
-        First, I had to get the correct request format:
-        1. Right-click on the page -> Inspect.
-        2. Click on the Network tab.
-        3. Click the login button to capture the `POST` request.
-        4. Right-click on the request and select "Copy as cURL".
+3. Next thing I thought to try was to reproduce the bypass. Since browsers can sometimes make it difficult to modify headers directly, I decided to use `curl` in the Linux terminal. First, I had to get the correct request format:
+    * Right-click on the page
+    * Click **Inspect**
+    * Click on the **Network** tab
+    * Click the login button to capture the `POST` request
+    * Right-click on the request and select **Copy as cURL**
+
+![img](./img/ctg5.png)
 
 4. After getting the cURL command, I pasted it into the terminal and manually added the required header: `-H 'X-Dev-Access: yes'`. The response printed out a JSON blob containing the flag: picoCTF{brut4_f0rc4_b3a957eb}
-![img](./img/ctg5.png)
 
 ```bash
 curl 'http://amiable-citadel.picoctf.net:58946/login' \
