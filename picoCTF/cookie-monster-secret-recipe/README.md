@@ -2,7 +2,7 @@
 
 ------
 
-# Introduction 
+## Introduction 
 Cookie Monster Secret Recipe is a Web Exploitation task. The goal is to find a top-secret "cookie recipe" (also known as a flag) which is hidden on a website.
 
 Challenge description:
