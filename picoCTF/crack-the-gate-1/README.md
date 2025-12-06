@@ -3,7 +3,7 @@
 ------
 
 ## Introduction
-Crack The Gate 1 is a Web Exploitation task. The goal is to analyze the login portal for vulnerabilites and find a way to bypass the authentication mechanism as `ctf-player@picoctf.org` to retrieve the sensitive data hidden inside.
+Crack The Gate 1 is a Web Exploitation task. The goal is to analyze the login portal for vulnerabilities and find a way to bypass the authentication mechanism as `ctf-player@picoctf.org` to retrieve the sensitive data hidden inside.
 
 Challenge description:
 
@@ -14,21 +14,21 @@ Challenge description:
 ## My approach to finding the flag
 
 1. Firstly, I connected to the website to see what I am dealing with.
-[!img1](./img/ctg1.png)
+![img1](./img/ctg1.png)
 
-2. I typed random characters in the password field and hit login. The page replied with "Invalid credentials". So, I thought maybe there was something to find in the page's HTML source code. After scrolling for a little bit and inspecting the HTML, I've noticed a weird comment, some scrambled letters, the comment looked like some kind of obfuscation was applied to them, so I thought maybe ROT13 would help me. I decoded the scrambled text and came across this `NOTE: Jack - temporary bypass: use header "X-Dev-Access: yes`.
-[!error](./img/ctg2.png)
-[!source-code](./img/ctg3.png)
-[!decoded](./img/ctg4.png)
+2. I typed random characters in the password field and hit login. The page replied with "Invalid credentials". So, I thought maybe there was something to find in the page's HTML source code. After scrolling for a little bit and inspecting the HTML, I noticed a weird comment with scrambled letters. It looked like some kind of simple obfuscation, so I tried `ROT13`. I decoded the scrambled text and found this note: `NOTE: Jack - temporary bypass: use header "X-Dev-Access: yes`.
+![error](./img/ctg2.png)
+![source-code](./img/ctg3.png)
+![decoded](./img/ctg4.png)
 
-3. Next thing I thought to try was to reproduce the bypass without relying on the browser, as they are blocking a lot of costum headers beacuse of CORS, so I used `curl` in the Linux terminal. First I had to go trough a few steps:
-        1. Right click on the page
-        2. Click inspect
-        3. Click on Network
-        4. Click the login button to get a `POST` request
-        5. Right click on the request and copy it as a cURL
+3. Next thing I thought to try was to reproduce the bypass. Since browsers can sometimes make it difficult to modify headers directly, I decided to use `curl` in the Linux terminal.
+        First, I had to get the correct request format:
+        1. Right-click on the page -> Inspect.
+        2. Click on the Network tab.
+        3. Click the login button to capture the `POST` request.
+        4. Right-click on the request and select "Copy as cURL".
 
-4. After getting the cURL, I pasted it in the terminal and added `-H 'X-Dev-Access: yes' \`. The response printed out, and there it was JSON blob with the flag: picoCTF{brut4_f0rc4_b3a957eb}
+4. After getting the cURL command, I pasted it into the terminal and manually added the required header: `-H 'X-Dev-Access: yes'`. The response printed out a JSON blob containing the flag: picoCTF{brut4_f0rc4_b3a957eb}
 
 ```bash
 curl 'http://amiable-citadel.picoctf.net:58946/login' \
@@ -44,4 +44,4 @@ curl 'http://amiable-citadel.picoctf.net:58946/login' \
   -H 'Priority: u=0' \
   --data-raw '{"email":"ctf-player@picoctf.org","password":"dadad"}' -H 'X-Dev-Access: yes' \
 ```
-[!flag](./img/ctg5.png)
+![flag](./img/ctg5.png)
