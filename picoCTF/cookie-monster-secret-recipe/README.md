@@ -12,7 +12,7 @@ You can access the Cookie Monster here and good luck.
 
 ------
 
-# My approach to finding the flag
+## My approach to finding the flag
 
 1. First of all, I connected to the website to see how it looks.
 
