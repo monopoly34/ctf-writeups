@@ -48,8 +48,6 @@ asm2:
 	<+44>:	mov    eax,DWORD PTR [ebp-0x4]	    ; eax = local-variable-1		
 	<+47>:	leave  				                ; clean up stack
 	<+48>:	ret    				                ; return eax = local-variable-1
-
-
 ```
 
 ### Since calculating the loop manually is tedious, I wrote a short Python script to simulate the logic.
