@@ -31,7 +31,7 @@ The writeups are organized by Platform and by Challenge Name. As I solve more ch
 (will update every 1st of the month)
 # picoCTF
 | Category | Challenge Name | Difficulty | Key Concepts |
-| :--- | :--- | :---: | :--- |
+| :---: | :---: | :---: | :---: |
 | **Reverse Engineering** | [asm1](./picoCTF/asm1) | 🟡 Medium  | 
 | **Reverse Engineering** | [asm2](./picoCTF/asm2) | 🔴 Hard | 
 | **Reverse Engineering** | [asm3](./picoCTF/asm3) | 🔴 Hard |  
