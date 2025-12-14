@@ -23,7 +23,7 @@ The writeups are organized by Platform and by Challenge Name. As I solve more ch
  ┃ ┣ 📂 Disko 1
  ┃ ┣ 📂 Flag In Flame
  ┃ ┗ ...
- ┗ 📂 UNbreakable (coming soon)
+ ┣ 📂 UNbreakable (coming soon)
  ┗ 📂 Google CTF (coming soon)
 ```
 
