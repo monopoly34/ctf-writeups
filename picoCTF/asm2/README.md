@@ -3,7 +3,7 @@
 ------
 
 ## Introduction
-asm2 is a Reverse Engineering task. The goal is to see what does `asm2(0x6,0x21)` returns.
+asm2 is a Reverse Engineering task. The goal is to see what does `asm2(0x6,0x21)` return.
 
 Challenge description:
 
