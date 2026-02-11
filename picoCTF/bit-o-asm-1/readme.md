@@ -16,17 +16,11 @@ Download the assembly dump here.
 
 ```nasm
 <+0>:     endbr64 
-<+4>:     push   rbp                         ; save rbp on stack
-<+5>:     mov    rbp,rsp                     ; rbp = rsp
-<+8>:     mov    DWORD PTR [rbp-0x14],edi    ; save at the address [rbp - 0x14] the value of edi
-<+11>:    mov    QWORD PTR [rbp-0x20],rsi    ; save at the address [rbp - 0x20] the value of rsi
-<+15>:    mov    DWORD PTR [rbp-0x4],0x9fe1a ; [rbp - 0x4] = 0x9fe1a (local_var)
-<+22>:    cmp    DWORD PTR [rbp-0x4],0x2710  ; compares local_var with the value 0x2710 (0x9fe1a - 0x2710)
-<+29>:    jle    0x55555555514e <main+37>    ; jump if lower or equal, since 0x9fe1a is bigger than 0x2710, the program does not jump
-<+31>:    sub    DWORD PTR [rbp-0x4],0x65    ; local_var - 0x65 = 0x9FDB5
-<+35>:    jmp    0x555555555152 <main+41>    ; jumps to offset <+41>
-<+37>:    add    DWORD PTR [rbp-0x4],0x65    ; (skipped)
-<+41>:    mov    eax,DWORD PTR [rbp-0x4]     ; eax = local_var (eax = 0x9FDB5 which will be 654773 in decimal)	
-<+44>:    pop    rbp                         ; restore rbp 
-<+45>:    ret                                ; return eax (654773)
+<+4>:     push   rbp			            ; save rbp on stack
+<+5>:     mov    rbp,rsp	      	        ; rbp = rsp (create a new stack frame)
+<+8>:     mov    DWORD PTR [rbp-0x4],edi    ; save at the address [rbp - 0x4] the value of edi 
+<+11>:    mov    QWORD PTR [rbp-0x10],rsi   ; [rbp - 0x10] = rsi
+<+15>:    mov    eax,0x30		            ; eax = 0x30 = 0*1 + 3*16 = 48 
+<+20>:    pop    rbp                        ; restore rbp
+<+21>:    ret                               ; return eax (48)
 ```
