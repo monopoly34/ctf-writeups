@@ -28,9 +28,11 @@ The writeups are organized by Platform and by Challenge Name. As I solve more ch
  ┗ 📂 TryHackMe (coming soon)
 ```
 
-# Most interesting challenges from each platform
+## Featured challenges
 
-# picoCTF
+Here is a short list of the most interesting and instructive challenges I've solved, organized by platform.
+
+## picoCTF
 | Category | Challenge Name | Difficulty | Key Concepts |
 | :---: | :---: | :---: | :---: |
 | **Reverse Engineering** | [asm1](./picoCTF/asm1) | 🟡 Medium  | stack frames, function arguments, jumps, pointers
