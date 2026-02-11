@@ -39,10 +39,7 @@ Here is a short list of the most interesting and instructive challenges I've sol
 | **Reverse Engineering** | [asm2](./picoCTF/asm2) | 🔴 Hard | local variables, loops, stack manipulation, pointers
 | **Reverse Engineering** | [asm3](./picoCTF/asm3) | 🔴 Hard | little endian, registers, bitwise operations
 | **Reverse Engineering** | [asm4](./picoCTF/asm4) | 🔴 Hard | nested loops, string manipulation, sign extension
-| **Reverse Engineering** | [Bit-O-Asm-1](./picoCTF/bit-o-asm-1) | 🟡 Medium  |
-| **Reverse Engineering** | [Bit-O-Asm-2](./picoCTF/bit-o-asm-2) | 🟡 Medium  |
-| **Reverse Engineering** | [Bit-O-Asm-3](./picoCTF/bit-o-asm-3) | 🟡 Medium  |
-| **Reverse Engineering** | [Bit-O-Asm-4](./picoCTF/bit-o-asm-4) | 🟡 Medium  |
+| **Reverse Engineering** | [Bit-O-Asm-3](./picoCTF/bit-o-asm-3) | 🟡 Medium  | local variables, pointers, signed multiplication
 
 Number of challenge solutions: 18
 
