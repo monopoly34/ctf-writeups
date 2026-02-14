@@ -15,7 +15,7 @@ The program's source code can be downloaded here. The binary can be downloaded h
 
 ## How to find the flag
 
-1. First, I connected to the server using `nc rescued-float.picoctf.net 61777` to see what information can it give me. The first thing I noticed, the server gives me the address of main and asks me for an address to jump to.
+1. First, I connected to the server using `nc rescued-float.picoctf.net 51746` to see what information can it give me. The first thing I noticed, the server gives me the address of main and asks me for an address to jump to.
 
 ```bash
 Address of main: 0x5aba8ab0333d
@@ -78,4 +78,4 @@ int main() {
 
 There were two functions that caught my eye, the **int main()** and the **int win()**. We know the address of the main, we have to figure out the address of the win. We can use the binary for that.
 
-3. I then used the `nm ./vuln | grep "win"` and `nm ./vuln | grep "main"` commands to see the distance in bytes between these two functions. After substracting the win address from the main address I was left with the number **0x96**, which is exactly the distance in bytes that we are looking for. We connected again to the server, substracted the distance from the address of main to find out what the address of win is, then we jumped to that address and found the flag: picoCTF{-}
+3. I then used the `nm ./vuln | grep "win"` and `nm ./vuln | grep "main"` commands to see the distance in bytes between these two functions. After subtracting the win address from the main address I was left with the number **0x96**, which is exactly the distance in bytes that we are looking for. We connected again to the server, subtracted the distance from the address of main to find the address of **win**. I then jumped to the address I calculated earlier and found the flag: picoCTF{-}
